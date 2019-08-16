@@ -8,12 +8,15 @@ public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
 	
-	/*
-	 * Spring will scan for a component that implements FortuneService interface.
-	 * In this case, it will be HappyFortuneService.
-	 */
+	// define default constructor
+	public TennisCoach() {
+		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	//define a setter method for injection of FortuneService
 	@Autowired
-	public TennisCoach(FortuneService theFortuneService) {
+	public void setFortuneService(FortuneService theFortuneService) {
+		System.out.println(">> TennisCoach: inside setFortuneService() method");
 		fortuneService = theFortuneService;
 	}
 	
